@@ -128,18 +128,6 @@ do
 			Msg( '{green}--{yellow} https://steamcommunity.com/saliengame/play' );
 			Msg( '{green}-- Happy farming!' );
 		}
-
-		// Randomizer is here to help reduce load on Steam servers
-		// Zones are sharded, and if everyone targets the same zone, it ends up worse for everyone
-		// By giving errors like time not synced or failed to join.
-		// Everyone at level 16 or above should be able to easily reach their Rank 6 badge without a problem with bosses
-		// So please don't change this and let's get this mini game over with
-		if( $Data[ 'response' ][ 'level' ] >= 0b10000 )
-		{
-			$RandomizeZone = 1;
-
-			Msg( '{yellow}-- You will be joining random zones to reduce Steam server load and help capture planets faster' );
-		}
 	}
 }
 while( !isset( $Data[ 'response' ][ 'score' ] ) && sleep( $FailSleep ) === 0 );
